@@ -15,7 +15,7 @@
     "watch": "nodemon --watch src/ --exec \"npm run launch\""
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "7",
