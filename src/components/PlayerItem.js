@@ -7,11 +7,11 @@ export const PlayerItem = (props) => (
 
     <RubberBand>
         <div className="player__items">
-            <svg height="100" width="100">
-                <circle cx="50" cy="50" r="35" stroke-width="3" stroke={props.stroke} fill={props.colour} />
-            </svg>
-
-            <h3 >{props.name} | {props.score}</h3>
+            {props.isPlaying ?
+                 <div className="player_square dead_player"> </div>
+             :
+                 <div className="player_square living_player"> </div>
+            }
         </div>
     </RubberBand>
 

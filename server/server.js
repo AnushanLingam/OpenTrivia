@@ -69,7 +69,8 @@ io.on("connection", (socket) => {
                     var game = games.getGameByRoom(config.room);
                     var players = games.getFromRoom(config.room);
                     callback({code: "success"});
-                    io.to(game.host).emit("PLAYER-CONNECTED", { name: config.name, colour: config.colour, score: 0, stroke: "" });
+                    //io.to(game.host).emit("PLAYER-CONNECTED", { name: config.name, colour: config.colour, score: 0, stroke: "" });
+                    io.to(config.room).emit("PLAYER-CONNECTED", { name: config.name, colour: config.colour, score: 0, stroke: "" });
                 } else {
                     callback({
                         code: "NAMEERROR",

@@ -33,6 +33,7 @@ export class QuestionPage extends React.Component {
     };
 
     render() {
+        console.log(this.props.players)
         return (
             <div className="content-container">
                 {this.props.type === "" && <Redirect to="/" />}
@@ -49,7 +50,7 @@ export class QuestionPage extends React.Component {
                                             <div className="question-background">
                                                 <QuestionOptions type={this.props.type} message={this.props.question.message} submitAnswer={this.submitAnswer} options={this.props.question.options} />
                                             </div>
-                                            {this.props.type === "HOST" && <Players players={this.props.players} />}
+                                            <Players players={this.props.players} />
                                         </div>
                                         :
                                         <div>
@@ -109,6 +110,11 @@ const mapDispatchToProps = (dispatch) => ({
     resetPlayers: () => dispatch(resetPlayers()),
     resetType: () => dispatch(resetType()),
     resetGame: () => dispatch(resetGame())
-});
+}); // TODO MAKE IT GET ALSO IT's OWN PLAYER AND CALCULATE WHETHER OR NOT IT SHOULD BE ABLE TO CONTINUE ANSWER QUESTIONS
+//TODO we'll know if the amount of points the player has is not equal to the amount of asked questions (means he was wrong at least in one)
+//IF user == regev -> check that the difference between the amount of asked questions to points is smaller then 3
+//IF USER != regev -> set timeout for answering a question
 
+
+//
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionPage);

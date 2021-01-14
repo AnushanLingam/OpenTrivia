@@ -2,14 +2,27 @@
     background: fade-out(white, .15);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     border: 2px solid darken($off-white, 10%);
     border-radius: 5px;
 }
 
 .player__items {
     display: flex;
+    margin:3px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.player_square {
+    width: 25px;
+    height: 25px;
+}
+
+.dead_player {
+    background-color: red;
+}
+
+.living_player {
+    background-color: green;
 }
